@@ -68,11 +68,56 @@ header.full-page-image .bottom-overlay h1 {
 }
 
 /* AUTHORS */
-.authors { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.6; margin: 0 0 20px; text-align: center; }
-.authors .affiliation { font-weight: 600; font-size: 16px; color: #111; }
+.authors { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #333; line-height: 1.6; margin: 0 0 20px; text-align: center; }
 .authors .equal-contribution { font-size: 14px; color: #555; }
-.authors a { color: inherit; text-decoration: none; }
-.authors a:hover { text-decoration: underline; }
+/* .authors a { color: inherit; text-decoration: none; } */
+/* .authors a:hover { text-decoration: underline; } */
+.authors a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.authors a:hover {
+  color: #B31B1B; /* Cornell red */
+  text-decoration: none;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* .authors .affiliation { font-weight: 600; font-size: 18px; color: #111; } */
+
+/* Cornell affiliation logo */
+.authors .affiliation.cornell-affiliation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;                  /* tighter seal-name spacing */
+  margin-top: 22px;
+  margin-bottom: 36px;
+  line-height: 1;
+  text-align: center;
+}
+
+.authors .cornell-seal {
+  width: 28px;
+  height: auto;
+  display: block;
+
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.authors .cornell-name {
+  width: 155px;
+  height: auto;
+  display: block;
+
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
 
 /* TAGLINES / SUBTITLES */
 /* .tagline { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 24px; background: #000; color: #fff; display: inline-block; padding: 8px 16px; margin: 40px 0 0px; } */
@@ -82,7 +127,13 @@ header.full-page-image .bottom-overlay h1 {
 /* QUICK LINKS */
 .quick-links { text-align: center; margin: 10px 0 30px; }
 .quick-links a { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: bold; color: #333; margin: 0 36px; text-decoration: none; }
-.quick-links a:hover { text-decoration: underline; color: #000; }
+/* .quick-links a:hover { text-decoration: underline; color: #000; } */
+.quick-links a:hover {
+  color: #B31B1B; /* Cornell red */
+  text-decoration: none;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
 
 /* IMAGE DEFAULTS */
 img { width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,.15); border-radius: 15px; box-sizing: border-box; }
@@ -211,12 +262,64 @@ figure video { display: block; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,.1
 .footer a { color: inherit; }
 
 /* BIBTEX BOX */
-.bibtex-code { background: rgba(80,80,80,.8); color: #f1f1f1; padding: 20px; border-radius: 8px; max-width: 1280px; margin: 20px auto 0; font-size: 14px; box-sizing: border-box; }
-.bibtex-title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.15em; margin: 0 0 10px; color: #f1f1f1; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.bibtex-code pre { white-space: pre-wrap; overflow-wrap: break-word; margin: 0; }
-.bibtex-code code { font-family: 'Courier New', Courier, monospace; overflow-wrap: break-word; }
-.copy-btn { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 600; color: #1b1b1b; background: #f1f1f1; border: none; border-radius: 6px; padding: 4px 12px; cursor: pointer; transition: background 0.2s ease; }
-.copy-btn:hover { background: #ddd; }
+/* .bibtex-code { background: rgba(115, 115, 115,.8); color: #f5f5f5; padding: 20px; border-radius: 8px; max-width: 1280px; margin: 20px auto 0; font-size: 14px; box-sizing: border-box; } */
+/* .bibtex-title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.15em; margin: 0 0 10px; color: #f1f1f1; display: flex; align-items: center; justify-content: space-between; gap: 12px; } */
+/* .bibtex-code pre { white-space: pre-wrap; overflow-wrap: break-word; margin: 0; } */
+/* .bibtex-code code { font-family: 'Courier New', Courier, monospace; overflow-wrap: break-word; } */
+/* .copy-btn { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 600; color: #1b1b1b; background: #f1f1f1; border: none; border-radius: 6px; padding: 4px 12px; cursor: pointer; transition: background 0.2s ease; } */
+/* .copy-btn:hover { background: #ddd; } */
+
+/* BIBTEX BOX */
+.bibtex-code {
+  position: relative;
+  background: #fffdf8;
+  color: #2b2620;
+  border: 1px solid #e6dccb;
+  /* border-left: 4px solid #B31B1B; */
+  border-radius: 12px;
+  padding: 54px 22px 22px;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); */
+}
+
+.bibtex-code pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.bibtex-code code {
+  font-family: "Roboto Mono", "Courier New", Courier, monospace;
+  line-height: 1.65;
+  color: #2b2620;
+}
+
+
+.copy-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #737373;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(179, 27, 27, 0.22);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.copy-btn:hover {
+  background: #8f1414;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(179, 27, 27, 0.28);
+}
 
 /* Scroll indicator arrow */
 .scroll-indicator {
