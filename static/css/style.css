@@ -162,7 +162,7 @@ header.full-page-image .bottom-overlay h1 {
   color: #1f242b;
   text-decoration: none;
 
-  /* background: #fffdf8; */
+  background: #fdfaf4;
   /* border: 1.5px solid #d8e0ea; */
   /* border-radius: 18px; */
   /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.05); */
@@ -184,38 +184,77 @@ header.full-page-image .bottom-overlay h1 {
   box-shadow: 0 6px 16px rgba(20, 24, 30, 0.10);
 }
 
+.quick-links .quick-btn-primary {
+  color: #fff;
+  background: #111318;
+  border-color: #111318;
+  box-shadow: 0 6px 16px rgba(20, 24, 30, 0.18);
+}
+
 .quick-links .quick-btn-primary:hover {
   color: #fff;
   background: #B31B1B;
   border-color: #B31B1B;
 }
 
-.quick-icon {
-  font-size: 17px;
-  line-height: 1;
+/* SVG image icons: override global img styling */
+.quick-links .quick-icon-img {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: none !important;
+  display: block;
+  flex: 0 0 auto;
+
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  object-fit: contain;
+}
+
+/* Make icon white on the black Paper button */
+.quick-links .quick-btn-primary .quick-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+/* Optional: tint icons red on hover for non-primary buttons */
+.quick-links .quick-btn:not(.quick-btn-primary):not(.quick-btn-disabled):hover .quick-icon-img {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(82%) saturate(3356%) hue-rotate(345deg) brightness(88%) contrast(96%);
+}
+
+.quick-label-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
 }
 
 .soon-label {
-  margin-left: 2px;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #a6abb2;
+  /* text-transform: uppercase; */
+  color: #aeb3ba;
 }
 
+/* Fully disabled Code button: no click, no hover change */
 .quick-links .quick-btn-disabled,
 .quick-links .quick-btn-disabled:hover,
 .quick-links .quick-btn-disabled:focus,
 .quick-links .quick-btn-disabled:active {
   color: #8f949b;
-  background: #fffaf5;
+  background: #fdfaf4;
   /* border-color: #e1e6ee; */
   /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.03); */
   transform: none;
   text-decoration: none;
   cursor: default;
   opacity: 0.72;
+  pointer-events: none;
+}
+
+.quick-links .quick-btn-disabled .quick-icon-img {
+  filter: none;
+  opacity: 0.75;
 }
 
 .quick-links .quick-btn-disabled .soon-label {
