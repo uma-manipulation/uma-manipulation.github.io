@@ -57,11 +57,34 @@
         </div>
       </div>
 
+      <!-- <div class="quick-links"> -->
+      <!--   <a href="https://arxiv.org/pdf/2606.16917" target="_blank">[arxiv]</a> -->
+      <!--   <a href="#video" id="video-link">[video]</a> -->
+      <!--   <a href="#" title="Coming soon">[code (coming soon)]</a> -->
+      <!--   <a href="#citation">[bibtex]</a> -->
+      <!-- </div> -->
+
       <div class="quick-links">
-        <a href="https://arxiv.org/pdf/2606.16917" target="_blank">[arxiv]</a>
-        <a href="#video" id="video-link">[video]</a>
-        <a href="#" title="Coming soon">[code (coming soon)]</a>
-        <a href="#citation">[bibtex]</a>
+        <a class="quick-btn quick-btn" href="https://arxiv.org/pdf/2606.16917" target="_blank">
+          <span class="quick-icon">▣</span>
+          <span>Paper</span>
+        </a>
+
+        <a class="quick-btn" href="#video" id="video-link">
+          <span class="quick-icon">▶</span>
+          <span>Video</span>
+        </a>
+
+        <a class="quick-btn quick-btn-disabled" href="#" title="Coming soon" aria-disabled="true">
+          <span class="quick-icon">&lt;/&gt;</span>
+          <span>Code</span>
+          <span class="soon-label">(soon)</span>
+        </a>
+
+        <a class="quick-btn" href="#citation">
+          <span class="quick-icon">▤</span>
+          <span>BibTeX</span>
+        </a>
       </div>
 
       <!-- Teaser (lead visual): plays once at 1x when scrolled into view, then swaps to the static teaser image (main.js). -->

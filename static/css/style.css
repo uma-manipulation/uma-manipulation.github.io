@@ -125,14 +125,115 @@ header.full-page-image .bottom-overlay h1 {
 .section-subtitle { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 20px; background: #000; color: #fff; display: table; padding: 6px 14px; margin: 30px 0 10px; }
 
 /* QUICK LINKS */
-.quick-links { text-align: center; margin: 10px 0 30px; }
-.quick-links a { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: bold; color: #333; margin: 0 36px; text-decoration: none; }
-/* .quick-links a:hover { text-decoration: underline; color: #000; } */
-.quick-links a:hover {
-  color: #B31B1B; /* Cornell red */
+/* .quick-links { text-align: center; margin: 10px 0 30px; } */
+/* .quick-links a { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: bold; color: #333; margin: 0 36px; text-decoration: none; } */
+/* [> .quick-links a:hover { text-decoration: underline; color: #000; } <] */
+/* .quick-links a:hover { */
+/*   color: #B31B1B; [> Cornell red <] */
+/*   text-decoration: none; */
+/*   text-decoration-thickness: 1.5px; */
+/*   text-underline-offset: 3px; */
+/* } */
+
+/* QUICK LINKS / BUTTONS */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 8px 0 34px;
+}
+
+.quick-links .quick-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 132px;
+  min-height: 54px;
+  padding: 0 22px;
+
+  font-family: "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1f242b;
   text-decoration: none;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 3px;
+
+  /* background: #fffdf8; */
+  /* border: 1.5px solid #d8e0ea; */
+  /* border-radius: 18px; */
+  /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.05); */
+
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.quick-links .quick-btn:hover {
+  color: #B31B1B;
+  border-color: #B31B1B;
+  background: #fffaf5;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(20, 24, 30, 0.10);
+}
+
+.quick-links .quick-btn-primary:hover {
+  color: #fff;
+  background: #B31B1B;
+  border-color: #B31B1B;
+}
+
+.quick-icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.soon-label {
+  margin-left: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a6abb2;
+}
+
+.quick-links .quick-btn-disabled,
+.quick-links .quick-btn-disabled:hover,
+.quick-links .quick-btn-disabled:focus,
+.quick-links .quick-btn-disabled:active {
+  color: #8f949b;
+  background: #fffaf5;
+  /* border-color: #e1e6ee; */
+  /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.03); */
+  transform: none;
+  text-decoration: none;
+  cursor: default;
+  opacity: 0.72;
+}
+
+.quick-links .quick-btn-disabled .soon-label {
+  color: #aeb3ba;
+}
+
+@media (max-width: 700px) {
+  .quick-links {
+    gap: 10px;
+  }
+
+  .quick-links .quick-btn {
+    min-width: 128px;
+    min-height: 50px;
+    padding: 0 18px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
 }
 
 /* IMAGE DEFAULTS */
