@@ -40,17 +40,54 @@
     </header> -->
     <!-- MAIN CONTENT BODY -->
     <main class="main-content">
-      <div class="sub-hero-text">Unified Motion-Action Modeling for Heterogeneous Robot Learning</div>
+      <div class="sub-hero-text">Unified Motion-Action Modeling </br> for Heterogeneous Robot Learning</div>
       <div class="authors">
-        <a href="https://www.quantumcookie.xyz/">Yunhao Cao*</a>, Shitong Liu*, <a href="https://cfeng16.github.io/">Chao Feng*</a>, Meryl Zhang, <a href="https://xuanchenlu.com/">Xuanchen Lu</a>, <a href="https://andrewowens.com/">Andrew Owens</a>, <a href="https://kuanfang.github.io/">Kuan Fang</a>
-        <!-- <div style="font-style:italic; color:#888;">*Equal contribution</div> -->
-        <div class="affiliation">Cornell University</div>
+        <a href="https://www.quantumcookie.xyz/">Yunhao Cao</a>*,
+        <span class="author-name">Shitong Liu</span>*,
+        <a href="https://cfeng16.github.io/">Chao Feng</a>*,
+        <span class="author-name">Meryl Zhang</span>,
+        <a href="https://xuanchenlu.com/">Xuanchen Lu</a>,
+        <a href="https://andrewowens.com/">Andrew Owens</a>,
+        <a href="https://kuanfang.github.io/">Kuan Fang</a>
+        <!-- <div class="affiliation">Cornell University</div> -->
+        <div class="affiliation cornell-affiliation">
+          <!-- <img class="cornell-logo" src="static/images/cornell-logo.webp" alt="Cornell University"> -->
+          <img class="cornell-seal" src="static/images/cornell-logo-0.png" alt="Cornell University">
+          <img class="cornell-name" src="static/images/cornell-logo-3.png" alt="Cornell University">
+        </div>
       </div>
 
-      <div class="quick-links">
-        <a href="https://arxiv.org/pdf/2606.16917" target="_blank">[arxiv]</a>
-        <a href="#" title="Coming soon">[code (coming soon)]</a>
-      </div>
+      <!-- <div class="quick-links"> -->
+      <!--   <a href="https://arxiv.org/pdf/2606.16917" target="_blank">[arxiv]</a> -->
+      <!--   <a href="#video" id="video-link">[video]</a> -->
+      <!--   <a href="#" title="Coming soon">[code (coming soon)]</a> -->
+      <!--   <a href="#citation">[bibtex]</a> -->
+      <!-- </div> -->
+
+<div class="quick-links">
+  <a class="quick-btn quick-btn" href="https://arxiv.org/pdf/2606.16917" target="_blank">
+    <img class="quick-icon-img" src="static/icons/pdf.svg" alt="" aria-hidden="true">
+    <span>Paper</span>
+  </a>
+
+  <a class="quick-btn" href="#video" id="video-link">
+    <img class="quick-icon-img" src="static/icons/video.svg" alt="" aria-hidden="true">
+    <span>Video</span>
+  </a>
+
+  <span class="quick-btn quick-btn-disabled" aria-disabled="true">
+    <img class="quick-icon-img" src="static/icons/code.svg" alt="" aria-hidden="true">
+    <span class="quick-label-stack">
+      <span>Code</span>
+      <span class="soon-label">soon</span>
+    </span>
+  </span>
+
+  <a class="quick-btn" href="#citation">
+    <img class="quick-icon-img" src="static/icons/bibtex.svg" alt="" aria-hidden="true">
+    <span>BibTeX</span>
+  </a>
+</div>
 
       <!-- Teaser (lead visual): plays once at 1x when scrolled into view, then swaps to the static teaser image (main.js). -->
       <figure>
@@ -451,12 +488,13 @@
       <!-- ================= VIDEO SUMMARY ================= -->
       <div class="tagline" id="video">Video Summary</div>
       <div class="main-video-container">
-        <video controls playsinline preload="metadata">
+        <video id="summary-video" controls playsinline preload="metadata">
           <source src="static/videos/UMA_Overview_v2_web.mp4" type="video/mp4">
         </video>
       </div>
 
       <!-- ================= ACKNOWLEDGEMENT ================= -->
+          </br>
       <div class="tagline" id="acknowledgement">Acknowledgement</div>
       <div class="section">
         <p>
@@ -470,17 +508,14 @@
       </div>
 
       <!-- ================= CITATION ================= -->
-      <div class="tagline" id="citation">Citation</div>
+      <div class="tagline" id="citation">BibTeX</div>
       <div class="bibtex-code">
-        <div class="bibtex-title">BibTeX <button id="copy-bibtex" class="copy-btn" type="button">Copy</button></div>
+        <button id="copy-bibtex" class="copy-btn" type="button">Copy</button>
         <pre><code id="bibtex-text">@misc{cao2026uma,
-      title={Unified Motion-Action Modeling for Heterogeneous Robot Learning},
-      author={Yunhao Cao and Shitong Liu and Chao Feng and Meryl Zhang and Xuanchen Lu and Andrew Owens and Kuan Fang},
-      year={2026},
-      eprint={2606.16917},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2606.16917},
+  title={Unified Motion-Action Modeling for Heterogeneous Robot Learning},
+  author={Yunhao Cao and Shitong Liu and Chao Feng and Meryl Zhang and Xuanchen Lu and Andrew Owens and Kuan Fang},
+  year={2026},
+  eprint={2606.16917},
 }</code></pre>
       </div>
 

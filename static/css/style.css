@@ -68,11 +68,56 @@ header.full-page-image .bottom-overlay h1 {
 }
 
 /* AUTHORS */
-.authors { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.6; margin: 0 0 20px; text-align: center; }
-.authors .affiliation { font-weight: 600; font-size: 16px; color: #111; }
+.authors { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #333; line-height: 1.6; margin: 0 0 20px; text-align: center; }
 .authors .equal-contribution { font-size: 14px; color: #555; }
-.authors a { color: inherit; text-decoration: none; }
-.authors a:hover { text-decoration: underline; }
+/* .authors a { color: inherit; text-decoration: none; } */
+/* .authors a:hover { text-decoration: underline; } */
+.authors a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.authors a:hover {
+  color: #B31B1B; /* Cornell red */
+  text-decoration: none;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* .authors .affiliation { font-weight: 600; font-size: 18px; color: #111; } */
+
+/* Cornell affiliation logo */
+.authors .affiliation.cornell-affiliation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;                  /* tighter seal-name spacing */
+  margin-top: 22px;
+  margin-bottom: 22px;
+  line-height: 1;
+  text-align: center;
+}
+
+.authors .cornell-seal {
+  width: 28px;
+  height: auto;
+  display: block;
+
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.authors .cornell-name {
+  width: 155px;
+  height: auto;
+  display: block;
+
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
 
 /* TAGLINES / SUBTITLES */
 /* .tagline { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 24px; background: #000; color: #fff; display: inline-block; padding: 8px 16px; margin: 40px 0 0px; } */
@@ -80,9 +125,155 @@ header.full-page-image .bottom-overlay h1 {
 .section-subtitle { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 20px; background: #000; color: #fff; display: table; padding: 6px 14px; margin: 30px 0 10px; }
 
 /* QUICK LINKS */
-.quick-links { text-align: center; margin: 10px 0 30px; }
-.quick-links a { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: bold; color: #333; margin: 0 36px; text-decoration: none; }
-.quick-links a:hover { text-decoration: underline; color: #000; }
+/* .quick-links { text-align: center; margin: 10px 0 30px; } */
+/* .quick-links a { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: bold; color: #333; margin: 0 36px; text-decoration: none; } */
+/* [> .quick-links a:hover { text-decoration: underline; color: #000; } <] */
+/* .quick-links a:hover { */
+/*   color: #B31B1B; [> Cornell red <] */
+/*   text-decoration: none; */
+/*   text-decoration-thickness: 1.5px; */
+/*   text-underline-offset: 3px; */
+/* } */
+
+/* QUICK LINKS / BUTTONS */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 8px 0 34px;
+}
+
+.quick-links .quick-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 132px;
+  min-height: 54px;
+  padding: 0 22px;
+
+  font-family: "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1f242b;
+  text-decoration: none;
+
+  background: #fdfaf4;
+  /* border: 1.5px solid #d8e0ea; */
+  /* border-radius: 18px; */
+  /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.05); */
+
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.quick-links .quick-btn:hover {
+  color: #B31B1B;
+  border-color: #B31B1B;
+  background: #fffaf5;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(20, 24, 30, 0.10);
+}
+
+.quick-links .quick-btn-primary {
+  color: #fff;
+  background: #111318;
+  border-color: #111318;
+  box-shadow: 0 6px 16px rgba(20, 24, 30, 0.18);
+}
+
+.quick-links .quick-btn-primary:hover {
+  color: #fff;
+  background: #B31B1B;
+  border-color: #B31B1B;
+}
+
+/* SVG image icons: override global img styling */
+.quick-links .quick-icon-img {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: none !important;
+  display: block;
+  flex: 0 0 auto;
+
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  object-fit: contain;
+}
+
+/* Make icon white on the black Paper button */
+.quick-links .quick-btn-primary .quick-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+/* Optional: tint icons red on hover for non-primary buttons */
+.quick-links .quick-btn:not(.quick-btn-primary):not(.quick-btn-disabled):hover .quick-icon-img {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(82%) saturate(3356%) hue-rotate(345deg) brightness(88%) contrast(96%);
+}
+
+.quick-label-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.soon-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  /* text-transform: uppercase; */
+  color: #aeb3ba;
+}
+
+/* Fully disabled Code button: no click, no hover change */
+.quick-links .quick-btn-disabled,
+.quick-links .quick-btn-disabled:hover,
+.quick-links .quick-btn-disabled:focus,
+.quick-links .quick-btn-disabled:active {
+  color: #8f949b;
+  background: #fdfaf4;
+  /* border-color: #e1e6ee; */
+  /* box-shadow: 0 2px 8px rgba(20, 24, 30, 0.03); */
+  transform: none;
+  text-decoration: none;
+  cursor: default;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.quick-links .quick-btn-disabled .quick-icon-img {
+  filter: none;
+  opacity: 0.75;
+}
+
+.quick-links .quick-btn-disabled .soon-label {
+  color: #aeb3ba;
+}
+
+@media (max-width: 700px) {
+  .quick-links {
+    gap: 10px;
+  }
+
+  .quick-links .quick-btn {
+    min-width: 128px;
+    min-height: 50px;
+    padding: 0 18px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+}
 
 /* IMAGE DEFAULTS */
 img { width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,.15); border-radius: 15px; box-sizing: border-box; }
@@ -211,12 +402,64 @@ figure video { display: block; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,.1
 .footer a { color: inherit; }
 
 /* BIBTEX BOX */
-.bibtex-code { background: rgba(80,80,80,.8); color: #f1f1f1; padding: 20px; border-radius: 8px; max-width: 1280px; margin: 20px auto 0; font-size: 14px; box-sizing: border-box; }
-.bibtex-title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.15em; margin: 0 0 10px; color: #f1f1f1; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.bibtex-code pre { white-space: pre-wrap; overflow-wrap: break-word; margin: 0; }
-.bibtex-code code { font-family: 'Courier New', Courier, monospace; overflow-wrap: break-word; }
-.copy-btn { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 600; color: #1b1b1b; background: #f1f1f1; border: none; border-radius: 6px; padding: 4px 12px; cursor: pointer; transition: background 0.2s ease; }
-.copy-btn:hover { background: #ddd; }
+/* .bibtex-code { background: rgba(115, 115, 115,.8); color: #f5f5f5; padding: 20px; border-radius: 8px; max-width: 1280px; margin: 20px auto 0; font-size: 14px; box-sizing: border-box; } */
+/* .bibtex-title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.15em; margin: 0 0 10px; color: #f1f1f1; display: flex; align-items: center; justify-content: space-between; gap: 12px; } */
+/* .bibtex-code pre { white-space: pre-wrap; overflow-wrap: break-word; margin: 0; } */
+/* .bibtex-code code { font-family: 'Courier New', Courier, monospace; overflow-wrap: break-word; } */
+/* .copy-btn { font-family: "Avenir Next","Inter", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 600; color: #1b1b1b; background: #f1f1f1; border: none; border-radius: 6px; padding: 4px 12px; cursor: pointer; transition: background 0.2s ease; } */
+/* .copy-btn:hover { background: #ddd; } */
+
+/* BIBTEX BOX */
+.bibtex-code {
+  position: relative;
+  background: #fffdf8;
+  color: #2b2620;
+  border: 1px solid #e6dccb;
+  /* border-left: 4px solid #B31B1B; */
+  border-radius: 12px;
+  padding: 54px 22px 22px;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); */
+}
+
+.bibtex-code pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.bibtex-code code {
+  font-family: "Roboto Mono", "Courier New", Courier, monospace;
+  line-height: 1.65;
+  color: #2b2620;
+}
+
+
+.copy-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: "Avenir Next", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #737373;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(179, 27, 27, 0.22);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.copy-btn:hover {
+  background: #8f1414;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(179, 27, 27, 0.28);
+}
 
 /* Scroll indicator arrow */
 .scroll-indicator {

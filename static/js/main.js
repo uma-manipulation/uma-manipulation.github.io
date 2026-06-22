@@ -61,3 +61,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoLink = document.getElementById("video-link");
+  const videoHeader = document.getElementById("video");
+  const summaryVideo = document.getElementById("summary-video");
+
+  if (!videoLink || !videoHeader || !summaryVideo) return;
+
+  videoLink.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    videoHeader.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    summaryVideo.muted = false;
+    summaryVideo.volume = 1.0;
+    summaryVideo.currentTime = 0;
+
+    try {
+      await summaryVideo.play();
+    } catch (error) {
+      console.warn("Video playback was blocked by the browser:", error);
+    }
+
+    history.pushState(null, "", "#video");
+  });
+});
